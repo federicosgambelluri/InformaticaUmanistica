@@ -70,11 +70,12 @@ async function caricaDaJSON() {
 // Funzione per caricare le copertine nel Cover Flow
 function caricaCoverFlow(vinili) {
     const carousel = document.querySelector('.carousel');
-    carousel.innerHTML = ''; // Pulisci le copertine esistenti
+    carousel.innerHTML = ''; // Pulisce le copertine esistenti
 
     vinili.forEach(vinile => {
         const coverPath = `images/cover${vinile.Codice}.png`;
         console.log(`Caricamento copertina: ${coverPath}`); // Debug
+
         const coverDiv = document.createElement('div');
         coverDiv.classList.add('cover');
         coverDiv.style.backgroundImage = `url('${coverPath}')`;
@@ -88,6 +89,9 @@ function caricaCoverFlow(vinili) {
         };
         img.onerror = () => {
             console.error(`Immagine non trovata: ${coverPath}`);
+            coverDiv.style.backgroundImage = `url('images/fallback.png')`;
+            carousel.appendChild(coverDiv);
+            aggiornaCoverFlow(currentIndex);
         };
     });
 }
@@ -95,7 +99,7 @@ function caricaCoverFlow(vinili) {
 // Funzione per visualizzare i vinili nella tabella
 function visualizzaVinili(vinili) {
     const tableBody = document.querySelector("table tbody");
-    tableBody.innerHTML = ""; // Pulisci la tabella prima di aggiungere i nuovi dati
+    tableBody.innerHTML = ""; // Pulisce la tabella prima di aggiungere i nuovi dati
 
     vinili.forEach(vinile => {
         const row = document.createElement("tr");
@@ -130,7 +134,7 @@ function aggiungiVinile() {
         Prezzo: document.getElementById("prezzo").value
     };
 
-    // Validazione di base (opzionale)
+    // Validazione di base
     if (!nuovoVinile.Codice || !nuovoVinile.Titolo) {
         alert("Codice e Titolo sono obbligatori.");
         return;
@@ -143,7 +147,7 @@ function aggiungiVinile() {
     viniliLocal.push(nuovoVinile);
     localStorage.setItem('vinili', JSON.stringify(viniliLocal));
 
-    // Carica i vinili dal JSON
+    // Carica i vinili dal JSON e dal Local Storage
     fetch('vinili.json')
         .then(response => response.json())
         .then(viniliJSON => {
