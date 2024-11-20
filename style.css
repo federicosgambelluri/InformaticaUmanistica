@@ -1,0 +1,261 @@
+/* Stili di base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+
+    /* Flexbox per il layout */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Stili per l'header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff6347; /* Cambia colore al passaggio del mouse */
+}
+
+/* Stile per il logo, se aggiunto */
+#logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Stili per la sezione Cover Flow */
+#coverflow {
+    text-align: center;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+#coverflow h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #222;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px; /* Effetto 3D */
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.cover {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.cover.active {
+    transform: scale(1.2) rotateY(0deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+.cover.left {
+    transform: scale(0.8) rotateY(45deg) translateX(-10px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.cover.right {
+    transform: scale(0.8) rotateY(-45deg) translateX(10px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.arrows {
+    margin-top: 10px;
+}
+
+.arrows button {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #222;
+    transition: color 0.3s;
+}
+
+.arrows button:hover {
+    color: #ff6347;
+}
+
+/* Stile della sezione principale */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Espande il main per occupare lo spazio disponibile */
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #222;
+}
+
+/* Stile per la sezione di aggiunta vinile */
+#aggiungi-vinile {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#aggiungi-vinile h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #222;
+}
+
+#aggiungi-vinile form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#aggiungi-vinile input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#aggiungi-vinile button {
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    grid-column: 1 / -1;
+    transition: background-color 0.3s;
+}
+
+#aggiungi-vinile button:hover {
+    background-color: #ff6347;
+}
+
+/* Stile della tabella */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Stile per la sezione dei filtri (se aggiunta in futuro) */
+#filtri {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    /* Rimosso il posizionamento fisso */
+    /* position: fixed;
+    width: 100%;
+    bottom: 0; */
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .carousel {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .cover {
+        flex: 0 0 auto;
+    }
+
+    #aggiungi-vinile form {
+        grid-template-columns: 1fr;
+    }
+}

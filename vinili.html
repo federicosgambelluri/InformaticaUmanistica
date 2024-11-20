@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinylLibrary - Collezione di Vinili</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header con titolo e navigazione -->
+    <header>
+        <h1>VinylLibrary - Collezione di Vinili</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="collezione.html">Collezione</a>
+            <a href="project-plan.html">Web Project Plan</a>
+        </nav>
+    </header>
+
+    <!-- Cover Flow Section -->
+    <section id="coverflow">
+        <h2>La Mia Collezione</h2>
+        <div class="carousel">
+            <!-- Le copertine saranno caricate dinamicamente -->
+        </div>
+        <div class="arrows">
+            <button>⬅️</button>
+            <button>➡️</button>
+        </div>
+    </section>
+
+    <!-- Sezione principale della collezione -->
+    <main>
+        <h2>La Mia Collezione</h2>
+        
+        <!-- Modulo per aggiungere un nuovo vinile -->
+        <section id="aggiungi-vinile">
+            <h3>Aggiungi un Nuovo Vinile</h3>
+            <form id="formVinile">
+                <input type="text" id="codice" placeholder="Codice" required>
+                <input type="text" id="titolo" placeholder="Titolo" required>
+                <input type="text" id="artista" placeholder="Artista-Gruppo" required>
+                <input type="number" id="anno" placeholder="Anno di Pubblicazione" required>
+                <input type="text" id="genere" placeholder="Genere" required>
+                <input type="text" id="pollici" placeholder="Pollici" required>
+                <input type="number" id="rpm" placeholder="RPM" required>
+                <input type="text" id="paese" placeholder="Paese" required>
+                <input type="text" id="etichetta" placeholder="Casa Discografica" required>
+                <input type="text" id="prezzo" placeholder="Prezzo" required>
+                <button type="button" onclick="aggiungiVinile()">Aggiungi alla Collezione</button>
+            </form>
+        </section>
+
+        <!-- Tabella dei vinili -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Codice</th>
+                    <th>Titolo</th>
+                    <th>Artista-Gruppo</th>
+                    <th>Anno di Pubblicazione</th>
+                    <th>Genere</th>
+                    <th>Pollici</th>
+                    <th>RPM</th>
+                    <th>Paese</th>
+                    <th>Casa Discografica</th>
+                    <th>Prezzo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Le righe dei vinili saranno aggiunte qui dinamicamente -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VinylLibrary - Tutti i diritti riservati.</p>
+        <p><a href="project-plan.html">Web Project Plan</a></p>
+    </footer>
+
+    <!-- Script per la gestione dei vinili -->
+    <script src="app.js"></script>
+
+</body>
+</html>
