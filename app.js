@@ -1,53 +1,4 @@
-// Funzione per impostare la copertina attiva e le vicine
-function aggiornaCoverFlow(index) {
-    const covers = document.querySelectorAll(".carousel .cover");
-    covers.forEach((cover, i) => {
-        cover.classList.remove("active", "left", "right");
-        if (i === index) {
-            cover.classList.add("active");
-        } else if (i === index - 1) {
-            cover.classList.add("left");
-        } else if (i === index + 1) {
-            cover.classList.add("right");
-        }
-    });
-}
 
-// Imposta l'indice iniziale e aggiorna la visualizzazione
-let currentIndex = 0;
-aggiornaCoverFlow(currentIndex);
-
-// Funzione per cambiare copertina
-function cambiaCover(direction) {
-    const covers = document.querySelectorAll(".carousel .cover");
-    currentIndex += direction;
-
-    // Gestione degli estremi per far scorrere in loop
-    if (currentIndex < 0) {
-        currentIndex = covers.length - 1;
-    } else if (currentIndex >= covers.length) {
-        currentIndex = 0;
-    }
-
-    aggiornaCoverFlow(currentIndex);
-}
-
-// Eventi di click sulle frecce
-document.querySelectorAll('.arrows button').forEach(button => {
-    button.addEventListener('click', () => {
-        const direction = button.textContent === '⬅️' ? -1 : 1;
-        cambiaCover(direction);
-    });
-});
-
-// Eventi di tastiera per navigare tra le copertine
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-        cambiaCover(1); // Scorri a destra
-    } else if (event.key === "ArrowLeft") {
-        cambiaCover(-1); // Scorri a sinistra
-    }
-});
 
 // Funzione per caricare i dati dal file JSON
 async function caricaDaJSON() {
@@ -61,40 +12,12 @@ async function caricaDaJSON() {
         vinili = vinili.concat(viniliLocal);
 
         visualizzaVinili(vinili);
-        caricaCoverFlow(vinili);
+
     } catch (error) {
         alert(error.message);
     }
 }
 
-// Funzione per caricare le copertine nel Cover Flow
-function caricaCoverFlow(vinili) {
-    const carousel = document.querySelector('.carousel');
-    carousel.innerHTML = ''; // Pulisce le copertine esistenti
-
-    vinili.forEach(vinile => {
-        const coverPath = `images/cover${vinile.Codice}.png`;
-        console.log(`Caricamento copertina: ${coverPath}`); // Debug
-
-        const coverDiv = document.createElement('div');
-        coverDiv.classList.add('cover');
-        coverDiv.style.backgroundImage = `url('${coverPath}')`;
-
-        // Verifica se l'immagine esiste
-        const img = new Image();
-        img.src = coverPath;
-        img.onload = () => {
-            carousel.appendChild(coverDiv);
-            aggiornaCoverFlow(currentIndex);
-        };
-        img.onerror = () => {
-            console.error(`Immagine non trovata: ${coverPath}`);
-            coverDiv.style.backgroundImage = `url('images/fallback.png')`;
-            carousel.appendChild(coverDiv);
-            aggiornaCoverFlow(currentIndex);
-        };
-    });
-}
 
 // Funzione per visualizzare i vinili nella tabella
 function visualizzaVinili(vinili) {
@@ -122,16 +45,16 @@ function visualizzaVinili(vinili) {
 // Funzione per aggiungere un vinile manualmente
 function aggiungiVinile() {
     const nuovoVinile = {
-        Codice: document.getElementById("codice").value,
-        Titolo: document.getElementById("titolo").value,
-        "Artista-Gruppo": document.getElementById("artista").value,
-        "Anno di Pubblicazione": document.getElementById("anno").value,
-        Genere: document.getElementById("genere").value,
-        Pollici: document.getElementById("pollici").value,
-        RPM: document.getElementById("rpm").value,
-        Paese: document.getElementById("paese").value,
-        "Casa Discografica": document.getElementById("etichetta").value,
-        Prezzo: document.getElementById("prezzo").value
+        Codice: document.getElementById("codice").value.trim(),
+        Titolo: document.getElementById("titolo").value.trim(),
+        "Artista-Gruppo": document.getElementById("artista").value.trim(),
+        "Anno di Pubblicazione": document.getElementById("anno").value.trim(),
+        Genere: document.getElementById("genere").value.trim(),
+        Pollici: document.getElementById("pollici").value.trim(),
+        RPM: document.getElementById("rpm").value.trim(),
+        Paese: document.getElementById("paese").value.trim(),
+        "Casa Discografica": document.getElementById("etichetta").value.trim(),
+        Prezzo: document.getElementById("prezzo").value.trim()
     };
 
     // Validazione di base
@@ -142,6 +65,13 @@ function aggiungiVinile() {
 
     // Carica i vinili dal Local Storage
     const viniliLocal = JSON.parse(localStorage.getItem('vinili')) || [];
+
+    // Verifica se il vinile con lo stesso codice esiste già
+    const esiste = viniliLocal.some(v => v.Codice === nuovoVinile.Codice);
+    if (esiste) {
+        alert("Un vinile con questo codice esiste già.");
+        return;
+    }
 
     // Aggiungi il nuovo vinile
     viniliLocal.push(nuovoVinile);
@@ -161,6 +91,15 @@ function aggiungiVinile() {
             alert('Errore nel caricamento dei vinili.');
             console.error(error);
         });
+}
+
+// Funzione per resettare la collezione (rimuove i vinili dal Local Storage)
+function resetVinili() {
+    if (confirm("Sei sicuro di voler resettare la collezione aggiunta manualmente?")) {
+        localStorage.removeItem('vinili');
+        caricaDaJSON(); // Ricarica la collezione originale
+        alert("Collezione resettata.");
+    }
 }
 
 // Carica i dati al caricamento della pagina

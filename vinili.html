@@ -8,80 +8,120 @@
 </head>
 <body>
 
-    <!-- Header con titolo e navigazione -->
-    <header>
-        <h1>VinylLibrary - Collezione di Vinili</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="collezione.html">Collezione</a>
-            <a href="project-plan.html">Web Project Plan</a>
-        </nav>
-    </header>
+<!-- Header con titolo e navigazione -->
+<header>
+    <a href="vinili.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+    <h1>LP Library - Collezione di Vinili</h1>
+    <nav>
+        <a href="vinili.html">Home</a>
+        <a href="autore.html">Autore</a>
+        <a href="project-plan.html">Web Project Plan</a>
+    </nav>
+</header>
 
-    <!-- Cover Flow Section -->
-    <section id="coverflow">
-        <h2>La Mia Collezione</h2>
-        <div class="carousel">
-            <!-- Le copertine saranno caricate dinamicamente -->
-        </div>
-        <div class="arrows">
-            <button>⬅️</button>
-            <button>➡️</button>
-        </div>
+
+<!-- Sezione principale della collezione -->
+<main>
+    <a><img src="images/coverflow.gif" alt="coverFlow" class="cover"></a>
+    <!-- Modulo per aggiungere un nuovo vinile -->
+    <section id="aggiungi-vinile">
+        <h3>Aggiungi un Nuovo Vinile</h3>
+        <form id="formVinile">
+            <input type="text" id="codice" placeholder="Codice" required>
+            <input type="text" id="titolo" placeholder="Titolo" required>
+            <input type="text" id="artista" placeholder="Artista-Gruppo" required>
+            <input type="number" id="anno" placeholder="Anno di Pubblicazione" required>
+
+            <select id="genere" required>
+                <option value="" disabled selected>Seleziona Genere</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Classica">Classica</option>
+                <option value="Blues">Blues</option>
+                <option value="Country">Country</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Folk">Folk</option>
+                <option value="Reggae">Reggae</option>
+                <option value="Metal">Metal</option>
+                <option value="Punk">Punk</option>
+                <option value="R&B">R&B</option>
+                <option value="Soul">Soul</option>
+                <option value="Disco">Disco</option>
+                <option value="Funk">Funk</option>
+                <option value="Gospel">Gospel</option>
+                <option value="Latin">Latin</option>
+                <option value="Alternative">Alternative</option>
+                <option value="Indie">Indie</option>
+                <option value="Techno">Techno</option>
+                <option value="House">House</option>
+                <option value="Drum & Bass">Drum & Bass</option>
+                <option value="Trap">Trap</option>
+                <option value="Ambient">Ambient</option>
+                <option value="Hard Rock">Hard Rock</option>
+                <option value="Other">Other</option>
+                <!-- Aggiungi ulteriori generi se necessario -->
+            </select>
+
+            <!-- Campo Pollici come menu a tendina -->
+
+            <select id="pollici" required>
+                <option value="" disabled selected>Seleziona Pollici</option>
+                <option value="10">10"</option>
+                <option value="12">12"</option>
+                <option value="7">7"</option>
+            </select>
+
+            <!-- Campo RPM come menu a tendina -->
+
+            <select id="rpm" required>
+                <option value="" disabled selected>Seleziona RPM</option>
+                <option value="33">33</option>
+                <option value="48">48</option>
+                <option value="78">78</option>
+            </select>
+
+            <input type="text" id="paese" placeholder="Paese" required>
+            <input type="text" id="etichetta" placeholder="Casa Discografica" required>
+            <input type="number" id="prezzo" placeholder="Prezzo" required>
+            <button type="button" onclick="aggiungiVinile()">Aggiungi alla Collezione</button>
+            <button type="button" onclick="resetVinili()">Resetta Collezione</button>
+        </form>
+
     </section>
 
-    <!-- Sezione principale della collezione -->
-    <main>
-        <h2>La Mia Collezione</h2>
-        
-        <!-- Modulo per aggiungere un nuovo vinile -->
-        <section id="aggiungi-vinile">
-            <h3>Aggiungi un Nuovo Vinile</h3>
-            <form id="formVinile">
-                <input type="text" id="codice" placeholder="Codice" required>
-                <input type="text" id="titolo" placeholder="Titolo" required>
-                <input type="text" id="artista" placeholder="Artista-Gruppo" required>
-                <input type="number" id="anno" placeholder="Anno di Pubblicazione" required>
-                <input type="text" id="genere" placeholder="Genere" required>
-                <input type="text" id="pollici" placeholder="Pollici" required>
-                <input type="number" id="rpm" placeholder="RPM" required>
-                <input type="text" id="paese" placeholder="Paese" required>
-                <input type="text" id="etichetta" placeholder="Casa Discografica" required>
-                <input type="text" id="prezzo" placeholder="Prezzo" required>
-                <button type="button" onclick="aggiungiVinile()">Aggiungi alla Collezione</button>
-            </form>
-        </section>
 
-        <!-- Tabella dei vinili -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Codice</th>
-                    <th>Titolo</th>
-                    <th>Artista-Gruppo</th>
-                    <th>Anno di Pubblicazione</th>
-                    <th>Genere</th>
-                    <th>Pollici</th>
-                    <th>RPM</th>
-                    <th>Paese</th>
-                    <th>Casa Discografica</th>
-                    <th>Prezzo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Le righe dei vinili saranno aggiunte qui dinamicamente -->
-            </tbody>
-        </table>
-    </main>
+    <!-- Tabella dei vinili -->
+    <table>
+        <thead>
+        <tr>
+            <th>Codice</th>
+            <th>Titolo</th>
+            <th>Artista-Gruppo</th>
+            <th>Anno di Pubblicazione</th>
+            <th>Genere</th>
+            <th>Pollici</th>
+            <th>RPM</th>
+            <th>Paese</th>
+            <th>Casa Discografica</th>
+            <th>Prezzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Le righe dei vinili saranno aggiunte qui dinamicamente -->
+        </tbody>
+    </table>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 VinylLibrary - Tutti i diritti riservati.</p>
-        <p><a href="project-plan.html">Web Project Plan</a></p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
+    <p><a href="project-plan.html">Web Project Plan</a></p>
+</footer>
 
-    <!-- Script per la gestione dei vinili -->
-    <script src="app.js"></script>
+<!-- Script per la gestione dei vinili -->
+<script src="app.js"></script>
 
 </body>
 </html>
