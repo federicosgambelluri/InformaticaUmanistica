@@ -18,6 +18,7 @@ async function caricaDaJSON() {
 
         viniliTotali = vinili; // Salva i vinili totali
         visualizzaVinili(); // Chiama visualizzaVinili senza parametri
+        caricaCarosello();
     } catch (error) {
        // alert(error.message);
     }
@@ -192,6 +193,29 @@ if (window.location.pathname.endsWith('disco.html')) {
         document.getElementById('titolo-disco').textContent = 'Nessun disco selezionato';
         document.getElementById('descrizione-disco').textContent = 'Nessun disco è stato specificato.';
     }
+}
+
+// Funzione per caricare il carosello delle copertine
+function caricaCarosello() {
+    const carouselInner = document.querySelector('#albumCarousel .carousel-inner');
+    carouselInner.innerHTML = ''; // Pulisce il contenuto esistente
+
+    viniliTotali.forEach((vinile, index) => {
+        const carouselItem = document.createElement('div');
+        carouselItem.classList.add('carousel-item');
+        if (index === 0) {
+            carouselItem.classList.add('active');
+        }
+
+        // Crea l'immagine
+        const img = document.createElement('img');
+        img.src = 'images/' + vinile.Titolo + '.jpg'; // Assicurati che il nome del file corrisponda
+        img.alt = vinile.Titolo;
+        img.classList.add('d-block', 'w-100');
+
+        carouselItem.appendChild(img);
+        carouselInner.appendChild(carouselItem);
+    });
 }
 
 // Carica i dati al caricamento della pagina
