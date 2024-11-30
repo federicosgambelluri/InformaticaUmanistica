@@ -314,37 +314,40 @@ footer a:hover {
     color: #fff;
 }
 
-/* Stili per il carosello */
-.carousel-item img {
-    max-height: 300px;
-    object-fit: contain;
-    padding: 10px;
+/* Stili per il carosello multi-elemento */
+.carousel-item {
+    padding: 15px 0;
 }
 
-/* Modifica del colore delle frecce del carosello */
+.carousel-item img {
+    width: 70%;
+    height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-image: none;
-    width: 50px;
-    height: 50px;
     background-color: #333; /* Colore delle frecce */
     border-radius: 50%;
-    opacity: 0.7;
-    transition: background-color 0.3s, opacity 0.3s;
+    width: 30px;
+    height: 30px;
 }
 
 .carousel-control-prev-icon:after,
 .carousel-control-next-icon:after {
     content: '';
     display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .carousel-control-prev-icon:after {

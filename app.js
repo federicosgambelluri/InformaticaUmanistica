@@ -196,26 +196,54 @@ if (window.location.pathname.endsWith('disco.html')) {
 }
 
 // Funzione per caricare il carosello delle copertine
+// Funzione per caricare il carosello delle copertine
 function caricaCarosello() {
     const carouselInner = document.querySelector('#albumCarousel .carousel-inner');
     carouselInner.innerHTML = ''; // Pulisce il contenuto esistente
 
-    viniliTotali.forEach((vinile, index) => {
+    const itemsPerSlide = 3; // Numero di elementi per slide
+    const totalItems = viniliTotali.length;
+
+    // Calcola il numero di slide necessarie
+    const numSlides = Math.ceil(totalItems / itemsPerSlide);
+
+    for (let i = 0; i < numSlides; i++) {
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
-        if (index === 0) {
+
+        if (i === 0) {
             carouselItem.classList.add('active');
         }
 
-        // Crea l'immagine
-        const img = document.createElement('img');
-        img.src = 'images/' + vinile.Titolo + '.jpg'; // Assicurati che il nome del file corrisponda
-        img.alt = vinile.Titolo;
-        img.classList.add('d-block', 'w-100');
+        // Crea un container per gli elementi di questa slide
+        const row = document.createElement('div');
+        row.classList.add('row');
 
-        carouselItem.appendChild(img);
+        // Aggiunge gli elementi per questa slide
+        for (let j = i * itemsPerSlide; j < (i * itemsPerSlide) + itemsPerSlide && j < totalItems; j++) {
+            const vinile = viniliTotali[j];
+
+            const col = document.createElement('div');
+            col.classList.add('col-12', 'col-sm-6', 'col-md-4'); // Adatta in base al responsive design
+
+            // Crea l'elemento immagine
+            const img = document.createElement('img');
+            img.src = 'images/' + vinile.Titolo + '.jpg'; // Assicurati che il nome del file corrisponda
+            img.alt = vinile.Titolo;
+            img.classList.add('img-fluid');
+
+            // Gestisce l'errore se l'immagine non esiste
+            img.onerror = function() {
+                this.src = 'images/default-cover.jpg'; // Immagine di default
+            };
+
+            col.appendChild(img);
+            row.appendChild(col);
+        }
+
+        carouselItem.appendChild(row);
         carouselInner.appendChild(carouselItem);
-    });
+    }
 }
 
 // Carica i dati al caricamento della pagina

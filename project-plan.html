@@ -22,7 +22,6 @@
 <!-- Sezione principale del piano di progetto -->
 <main>
     <section id="project-plan">
-        <h1>Come ho realizzato tutto questo</h1>
 
         <h2>1. Ideazione e Pianificazione (Web Project Plan)</h2>
 
@@ -30,9 +29,7 @@
         <p>
             <strong>Obiettivo:</strong> Creare una libreria digitale per gestire la propria collezione di vinili. L’obiettivo è offrire uno strumento per catalogare, descrivere e organizzare i dischi in vinile, permettendo agli utenti di visualizzare facilmente informazioni come titolo, artista, anno, genere, etichetta e dettagli unici della propria collezione.
         </p>
-        <p>
-            <strong>Abstract (Idea):</strong> LP Library è una piattaforma per collezionisti di vinili, ideata per catalogare, visualizzare e organizzare le collezioni in modo intuitivo e semplice, aiutando gli utenti a gestire e valorizzare i propri dischi.
-        </p>
+
 
         <h3>1.1.2 Brief (Pianificazione)</h3>
         <ul>
@@ -42,14 +39,13 @@
                     <li>Facilitare la gestione della collezione di vinili tramite un’interfaccia digitale.</li>
                     <li>Fornire strumenti per visualizzare e cercare dischi in base a vari criteri.</li>
                     <li>Permettere agli utenti di accedere a informazioni dettagliate su ciascun disco.</li>
-                    <li>Permettere anche l’inserimento di un'ubicazione, nel caso in cui l’utente voglia catalogare gli scaffali o i ripiani dove conserva i vinili per trovarli rapidamente.</li>
-                </ul>
+                    </ul>
             </li>
             <li>
                 <strong>Pubblico:</strong>
                 <ul>
                     <li>Il pubblico principale sono appassionati di vinili che desiderano catalogare la propria collezione. Il progetto è da considerarsi amatoriale e non per i negozianti.</li>
-                    <li>Possibili sottogruppi includono diversi utenti, nel caso di una famiglia, dove membri hanno LP diversi e non desiderano inserirli nella collezione principale.</li>
+                    <li>Con i prossimi aggiornamenti, verrà implementata la possibilità di utilizzare la piattaforma in maniera multiutente. Questa modalità è pensata per le famiglie numerose, con diverse librerie e differenti gusti musicali.</li>
                 </ul>
             </li>
             <li>
@@ -62,8 +58,8 @@
             <li>
                 <strong>Contenuti e Dati:</strong>
                 <ul>
-                    <li>Fonti di dati come informazioni discografiche, biografie degli artisti e descrizioni saranno curate direttamente dagli utenti, ma si possono esplorare anche API pubbliche per estrarre dati di base (ad esempio, Discogs o MusicBrainz, se permesso).</li>
-                    <li>Ogni disco includerà informazioni principali: Codice, Titolo, Artista-Gruppo, Anno di pubblicazione, Dimensioni (Pollici e RPM), Paese, Casa Discografica, Prezzo e Ubicazione.</li>
+                    <li>Fonti di dati come informazioni discografiche, biografie degli artisti e descrizioni saranno curate direttamente dagli utenti, ma in futuro si possono esplorare anche API pubbliche per estrarre dati di base (ad esempio, Discogs o MusicBrainz, se permesso).</li>
+                    <li>Ogni disco includerà informazioni principali: Codice, Titolo, Artista-Gruppo, Anno di pubblicazione, Dimensioni (Pollici e RPM), Paese, Casa Discografica, Prezzo, come meglio indicato nelle prossime pagine.</li>
                 </ul>
             </li>
         </ul>
@@ -187,48 +183,93 @@ Web Project Plan (metanavigazione)
 
         <h3>4.2 Creazione dei Wireframes</h3>
         <p>Ecco una descrizione di ciascun wireframe:</p>
+
+
+
         <ul>
             <li>
                 <strong>Home Page Wireframe:</strong>
                 <ul>
                     <li>Testata con titolo del sito e menu di navigazione.</li>
-                    <li>Sezione centrale con descrizione del sito e collegamenti alla collezione di vinili.</li>
-                    <li>Piè di pagina con link di metanavigazione (es. Web Project Plan).</li>
+                    <li>Carosello con immagini dei vinili della collezione</li>
+                    <li>Sezione form per inserire nuovi LP</li>
+                    <li>Tabella/Galleria con l'elenco di tutti i dischi</li>
+                    <li>Piè di pagina con copiright.</li>
                 </ul>
             </li>
+            <img src="images/wireframe.png" alt="Wireframe" style="width: 100%">
+            <br>
+            <br>
             <li>
-                <strong>Collezione di Vinili Wireframe:</strong>
+
+                <strong>Info di Vinili Wireframe:</strong>
                 <ul>
                     <li>Testata con link di navigazione principali.</li>
-                    <li>Tabella dei Vinili con intestazioni per ciascun campo.</li>
-                    <li>Filtri e Barra di Ricerca per opzioni avanzate di navigazione.</li>
-                    <li>Piè di pagina con link utili.</li>
+                    <li>Titolo del vinile in primo piano</li>
+                    <li>Immagine del vinile in primo piano al centro</li>
+                    <li>Informazioni sul vinile</li>
                 </ul>
             </li>
-            <li>
-                <strong>Pagina Dettagli Vinile Wireframe:</strong>
-                <ul>
-                    <li>Testata con navigazione.</li>
-                    <li>Sezione centrale con tutti i dettagli di un singolo vinile.</li>
-                    <li>Piè di pagina con link di metanavigazione.</li>
-                </ul>
-            </li>
+            <img src="images/wireframe2.png" alt="Wireframe" style="width: 100%">
+            <br>
+            <br>
         </ul>
 
         <!-- Sezione 5 -->
         <h2>5. Usabilità</h2>
         <p>L'usabilità è fondamentale per assicurare che gli utenti possano interagire con il sito in modo efficace e soddisfacente. Gli aspetti considerati includono:</p>
         <h3>5.1 Architettura dell'Informazione</h3>
-        <p>La struttura chiara e logica delle pagine aiuta gli utenti a trovare facilmente le informazioni desiderate.</p>
-        <h3>5.2 Aspetto e Tipografia</h3>
-        <p>Utilizzo di font leggibili e dimensioni adeguate per migliorare la leggibilità del contenuto.</p>
+        <p>La struttura chiara, logica e minimale delle pagine aiuta gli utenti a trovare facilmente le informazioni desiderate.</p>
+        <h3>5.2 Aspetto e Tipografia: Colori, Icone e Font</h3>
         <h3>5.3 Colori, Icone e Font</h3>
-        <p>Scelta di una palette di colori armoniosa e di icone intuitive per rendere l'interfaccia più user-friendly.</p>
+        <p>Per rendere l'interfaccia più user-friendly, abbiamo scelto una palette di colori neutri con accenti vivaci che enfatizzano gli elementi interattivi. Questa combinazione crea un design pulito, moderno e facilmente navigabile.</p>
+        <ul>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#f4f4f4;border:1px solid #ccc;"></span>  #f4f4f4</strong> (grigio molto chiaro): Utilizzato come colore di sfondo principale del sito, conferisce luminosità e facilita la lettura dei contenuti.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#333;border:1px solid #ccc;"></span>  #333</strong> (grigio scuro): Impiegato per il testo principale, assicura un alto contrasto con lo sfondo chiaro, migliorando la leggibilità.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#222;border:1px solid #ccc;"></span>  #222</strong> (grigio molto scuro quasi nero): Utilizzato per i titoli e gli header, mette in risalto le sezioni importanti della pagina.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#fff;border:1px solid #ccc;"></span>  #fff</strong> (bianco puro): Usato per il testo su sfondi scuri e per alcuni elementi grafici, mantenendo un aspetto pulito e minimalista.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#ff6347;border:1px solid #ccc;"></span>  #ff6347</strong> (rosso aranciato "Tomato"): Impiegato per gli elementi interattivi come link e bottoni al passaggio del mouse, aggiunge vivacità e guida l'attenzione dell'utente.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#ccc;border:1px solid #ccc;"></span>  #ccc</strong> (grigio chiaro): Utilizzato per i bordi di input, select e tabelle, definisce le aree senza risultare invasivo.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#e5533d;border:1px solid #ccc;"></span>  #e5533d</strong> (rosso mattone): Usato per l'effetto hover su alcuni bottoni, fornisce un feedback visivo all'utente.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#f9f9f9;border:1px solid #ccc;"></span>  #f9f9f9</strong> (grigio molto chiaro): Applicato come sfondo alternato nelle righe delle tabelle, migliora la leggibilità delle informazioni tabellari.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#f1f1f1;border:1px solid #ccc;"></span>  #f1f1f1</strong> (grigio chiarissimo): Utilizzato come sfondo per i pulsanti di paginazione, crea una separazione visiva e facilita la navigazione.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#ddd;border:1px solid #ccc;"></span>  #ddd</strong> (grigio medio): Impiegato per l'effetto hover sui pulsanti di paginazione, indicando interattività.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#f0f0f0;border:1px solid #ccc;"></span>  #f0f0f0</strong> (grigio molto chiaro): Usato come sfondo per le immagini di copertina, riempie eventuali spazi vuoti e mantiene la coerenza visiva.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#444;border:1px solid #ccc;"></span>  #444</strong> (grigio scuro): Utilizzato per i sottotitoli, distingue le diverse sezioni del contenuto.
+            </li>
+            <li>
+                <strong><span style="display:inline-block;width:20px;height:20px;background-color:#555;border:1px solid #ccc;"></span>  #555</strong> (grigio medio-scuro): Impiegato per le icone di controllo del carosello al passaggio del mouse, sottolinea gli elementi interattivi.
+            </li>
+        </ul>
+        <p>Le icone sono state scelte per la loro immediatezza e riconoscibilità, contribuendo a un'esperienza utente fluida. Il font utilizzato è <strong>Arial</strong>, un carattere sans-serif noto per la sua leggibilità sia su schermi che su carta stampata.</p>
 
         <!-- Sezione 6 -->
         <h2>6. Servizi</h2>
         <h3>6.1 Sistemi di Browsing</h3>
-        <p>Implementazione di sistemi di navigazione efficienti, come menu, breadcrumb e filtri di ricerca.</p>
+        <p>Per quanto riguarda la navigazione non è stato necessario introdurre sistemi di navigazione come menu, breadcrumb poichè la struttura è molto semplice e l'header funge perfettametne da navigatore, è stata solo utilizzata una paginazione per la tabella dei vinili per evitare che l'elenco fosse troppo lungo e in modo tale da semplificare la navigazione, non si esclude l' introduzione futura di filtri di ricerca.</p>
         <h3>6.2 Utilities e Tools</h3>
         <p>Fornitura di strumenti utili agli utenti, come la possibilità di aggiungere nuovi vinili, modificare informazioni e ordinare la collezione.</p>
         <h3>6.3 Strumenti e Servizi</h3>
@@ -238,11 +279,14 @@ Web Project Plan (metanavigazione)
         <h2>7. Bibliografia</h2>
         <p>Le fonti utilizzate per lo sviluppo del progetto includono:</p>
         <ul>
-            <li><strong>Testi:</strong> Documentazione ufficiale di HTML, CSS e JavaScript.</li>
-            <li><strong>Immagini:</strong> Immagini dei vinili e icone utilizzate nel sito.</li>
-            <li><strong>Strumenti:</strong> Editor di codice come Visual Studio Code, strumenti di progettazione come Figma o Adobe XD.</li>
-            <li><strong>Applicazioni e Componenti:</strong> Librerie JavaScript come jQuery (se utilizzate), framework CSS come Bootstrap (se utilizzati).</li>
+            <li><strong>Testi:</strong> Le indicazioni per la realizzaizone del progetto sono state fornite su Virutale, dalla professoressa Francesca Tomasi, i vinili fanno parte della collezione dello studente Federico Sgambelluri e le informazioni su di essi sono state reperite da Discogs</li>
+            <li><strong>Immagini:</strong> Le immagini degli LP sono state reprerite da: Amazon, Apple Music, IBS, Spotfy, Mondadori</li>
+            <li><strong>Strumenti:</strong> Il codice è stato redatto con l'Editor IntelliJ IDEA, i Wireframe sono stati realizzati utilizzando il sitoo wireframe.cc</li>
+            <li><strong>Applicazioni e Componenti:</strong> Sono stati utilizzati framework CSS come Bootstrap per la realizzazione del carosello con le imamgini degli LP.</li>
         </ul>
+        <strong>Nota Bene: </strong>
+        <p>Gli LP che sono presenti al caricamento della pagina sono caricati su un file json, i seguenti dischi che si aggiungono tramite il form invece sono memorizzati nella chache del berowser, visto che la versione gratuita del servizio di hosting utilizzato (GitHub), non permette l'utilizzo di Backend tradizioanli poichè progettato per hostare pagine statiche. </p>
+    <p>Si chiede scusa per eventuali errori di battitura.</p>
     </section>
 </main>
 
