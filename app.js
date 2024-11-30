@@ -1,4 +1,6 @@
-
+let viniliTotali = []; // Array che contiene tutti i vinili
+let elementiPerPagina = 10; // Numero di elementi per pagina
+let paginaCorrente = 1; // Pagina attualmente visualizzata
 
 // Funzione per caricare i dati dal file JSON
 async function caricaDaJSON() {
@@ -11,24 +13,32 @@ async function caricaDaJSON() {
         const viniliLocal = JSON.parse(localStorage.getItem('vinili')) || [];
         vinili = vinili.concat(viniliLocal);
 
-        visualizzaVinili(vinili);
+        // Ordina i vinili in ordine alfabetico per 'Artista-Gruppo'
+        vinili.sort((a, b) => a["Artista-Gruppo"].localeCompare(b["Artista-Gruppo"]));
 
+        viniliTotali = vinili; // Salva i vinili totali
+        visualizzaVinili(); // Chiama visualizzaVinili senza parametri
     } catch (error) {
-        alert(error.message);
+       // alert(error.message);
     }
 }
 
-
 // Funzione per visualizzare i vinili nella tabella
-function visualizzaVinili(vinili) {
+function visualizzaVinili() {
+    const vinili = viniliTotali;
     const tableBody = document.querySelector("table tbody");
     tableBody.innerHTML = ""; // Pulisce la tabella prima di aggiungere i nuovi dati
 
-    vinili.forEach(vinile => {
+    // Calcola gli indici per la paginazione
+    const startIndex = (paginaCorrente - 1) * elementiPerPagina;
+    const endIndex = startIndex + elementiPerPagina;
+    const viniliDaMostrare = vinili.slice(startIndex, endIndex);
+
+    viniliDaMostrare.forEach(vinile => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${vinile.Codice || ""}</td>
-            <td>${vinile.Titolo || ""}</td>
+            <td><a href="disco.html?title=${encodeURIComponent(vinile.Titolo)}" class="titolo-disco-link">${vinile.Titolo || ""}</a></td>
             <td>${vinile["Artista-Gruppo"] || ""}</td>
             <td>${vinile["Anno di Pubblicazione"] || ""}</td>
             <td>${vinile.Genere || ""}</td>
@@ -40,6 +50,31 @@ function visualizzaVinili(vinili) {
         `;
         tableBody.appendChild(row);
     });
+
+    // Aggiorna i controlli di paginazione
+    mostraPaginazione();
+}
+
+// Funzione per mostrare i controlli di paginazione
+function mostraPaginazione() {
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = ""; // Pulisce i pulsanti di paginazione
+
+    const totalPages = Math.ceil(viniliTotali.length / elementiPerPagina);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i;
+        btn.classList.add('pagina');
+        if (i === paginaCorrente) {
+            btn.classList.add('active');
+        }
+        btn.addEventListener('click', function () {
+            paginaCorrente = i;
+            visualizzaVinili();
+        });
+        paginationContainer.appendChild(btn);
+    }
 }
 
 // Funzione per aggiungere un vinile manualmente
@@ -77,20 +112,17 @@ function aggiungiVinile() {
     viniliLocal.push(nuovoVinile);
     localStorage.setItem('vinili', JSON.stringify(viniliLocal));
 
-    // Carica i vinili dal JSON e dal Local Storage
-    fetch('vinili.json')
-        .then(response => response.json())
-        .then(viniliJSON => {
-            const viniliTotali = viniliJSON.concat(viniliLocal);
-            visualizzaVinili(viniliTotali);
-            caricaCoverFlow(viniliTotali);
-            // Resetta il modulo
-            document.getElementById("formVinile").reset();
-        })
-        .catch(error => {
-            alert('Errore nel caricamento dei vinili.');
-            console.error(error);
-        });
+    // Aggiorna viniliTotali
+    viniliTotali.push(nuovoVinile);
+
+    // Ordina i vinili in ordine alfabetico per 'Artista-Gruppo'
+    viniliTotali.sort((a, b) => a["Artista-Gruppo"].localeCompare(b["Artista-Gruppo"]));
+
+    // Visualizza i vinili
+    visualizzaVinili();
+
+    // Resetta il modulo
+    document.getElementById("formVinile").reset();
 }
 
 // Funzione per resettare la collezione (rimuove i vinili dal Local Storage)
@@ -99,6 +131,66 @@ function resetVinili() {
         localStorage.removeItem('vinili');
         caricaDaJSON(); // Ricarica la collezione originale
         alert("Collezione resettata.");
+    }
+}
+
+
+if (window.location.pathname.endsWith('disco.html')) {
+
+    // Funzione per ottenere i parametri dall'URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Recupera il parametro 'title' dall'URL
+    const titolo = getQueryParam('title');
+
+    if (titolo) {
+        // Carica i dati dei vinili dal JSON
+        fetch('vinili.json')
+            .then(response => response.json())
+            .then(vinili => {
+                // Carica i vinili dal Local Storage
+                const viniliLocal = JSON.parse(localStorage.getItem('vinili')) || [];
+                vinili = vinili.concat(viniliLocal);
+
+                // Cerca il disco con il titolo corrispondente
+                const disco = vinili.find(v => v.Titolo === titolo);
+
+                if (disco) {
+                    document.getElementById('titolo-disco').textContent = disco.Titolo;
+
+                    // Se hai un'immagine specifica per il disco, aggiorna l'attributo 'src'
+                    // Ad esempio, se le immagini sono nominate con il codice del disco:
+                    document.getElementById('copertina-disco').src = 'images/' + disco.Titolo + '.jpg';
+
+                    // Aggiorna l'attributo 'alt' per l'immagine
+                    document.getElementById('copertina-disco').alt = 'Copertina di ' + disco.Titolo;
+
+                    // Crea una descrizione del disco
+                    const descrizione = `
+                            <p><strong>Artista/Gruppo:</strong> ${disco["Artista-Gruppo"] || 'N/A'}</p>
+                            <p><strong>Anno di Pubblicazione:</strong> ${disco["Anno di Pubblicazione"] || 'N/A'}</p>
+                            <p><strong>Genere:</strong> ${disco.Genere || 'N/A'}</p>
+                            <p><strong>Paese:</strong> ${disco.Paese || 'N/A'}</p>
+                            <p><strong>Casa Discografica:</strong> ${disco["Casa Discografica"] || 'N/A'}</p>
+                            <p><strong>Prezzo:</strong> ${disco.Prezzo || 'N/A'} €</p>
+                        `;
+                    document.getElementById('descrizione-disco').innerHTML = descrizione;
+                } else {
+                    document.getElementById('titolo-disco').textContent = 'Disco non trovato';
+                    document.getElementById('descrizione-disco').textContent = 'Spiacente, il disco richiesto non è disponibile.';
+                }
+            })
+            .catch(error => {
+                console.error('Errore nel caricamento dei vinili:', error);
+                document.getElementById('titolo-disco').textContent = 'Errore';
+                document.getElementById('descrizione-disco').textContent = 'Si è verificato un errore durante il caricamento dei dati del disco.';
+            });
+    } else {
+        document.getElementById('titolo-disco').textContent = 'Nessun disco selezionato';
+        document.getElementById('descrizione-disco').textContent = 'Nessun disco è stato specificato.';
     }
 }
 

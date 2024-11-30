@@ -14,23 +14,22 @@
     <h1>LP Library - Collezione di Vinili</h1>
     <nav>
         <a href="vinili.html">Home</a>
-        <a href="autore.html">Autore</a>
+        <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
         <a href="project-plan.html">Web Project Plan</a>
     </nav>
 </header>
-
 
 <!-- Sezione principale della collezione -->
 <main>
     <a><img src="images/coverflow.gif" alt="coverFlow" class="cover"></a>
     <!-- Modulo per aggiungere un nuovo vinile -->
     <section id="aggiungi-vinile">
-        <h3>Aggiungi un Nuovo Vinile</h3>
+        <h3>Aggiungi un Nuovo Vinile (Beta) </h3>
         <form id="formVinile">
             <input type="text" id="codice" placeholder="Codice" required>
             <input type="text" id="titolo" placeholder="Titolo" required>
             <input type="text" id="artista" placeholder="Artista-Gruppo" required>
-            <input type="number" id="anno" placeholder="Anno di Pubblicazione" required>
+            <input type="number" id="anno" placeholder="Anno di Pubblicazione" required minlength="4" maxlength="4">
 
             <select id="genere" required>
                 <option value="" disabled selected>Seleziona Genere</option>
@@ -65,7 +64,6 @@
             </select>
 
             <!-- Campo Pollici come menu a tendina -->
-
             <select id="pollici" required>
                 <option value="" disabled selected>Seleziona Pollici</option>
                 <option value="10">10"</option>
@@ -74,7 +72,6 @@
             </select>
 
             <!-- Campo RPM come menu a tendina -->
-
             <select id="rpm" required>
                 <option value="" disabled selected>Seleziona RPM</option>
                 <option value="33">33</option>
@@ -82,15 +79,14 @@
                 <option value="78">78</option>
             </select>
 
-            <input type="text" id="paese" placeholder="Paese" required>
+            <!-- Modifica dell'input 'Paese' -->
+            <input type="text" id="paese" placeholder="Paese" required minlength="2" maxlength="2" pattern="[A-Za-z]{2}">
             <input type="text" id="etichetta" placeholder="Casa Discografica" required>
             <input type="number" id="prezzo" placeholder="Prezzo" required>
             <button type="button" onclick="aggiungiVinile()">Aggiungi alla Collezione</button>
             <button type="button" onclick="resetVinili()">Resetta Collezione</button>
         </form>
-
     </section>
-
 
     <!-- Tabella dei vinili -->
     <table>
@@ -112,12 +108,15 @@
         <!-- Le righe dei vinili saranno aggiunte qui dinamicamente -->
         </tbody>
     </table>
+
+    <!-- Contenitore per la paginazione -->
+    <div id="pagination"></div>
 </main>
 
 <!-- Footer -->
 <footer>
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
-    <p><a href="project-plan.html">Web Project Plan</a></p>
+
 </footer>
 
 <!-- Script per la gestione dei vinili -->

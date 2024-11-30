@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VinylLibrary - Collezione di Vinili</title>
+    <title>LP Library - Web Project Plan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,28 +11,245 @@
 <!-- Header con titolo e navigazione -->
 <header>
     <a href="vinili.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
-    <h1>LP Library - Collezione di Vinili</h1>
+    <h1>LP Library - Web Project Plan</h1>
     <nav>
         <a href="vinili.html">Home</a>
-        <a href="autore.html">Autore</a>
+        <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
         <a href="project-plan.html">Web Project Plan</a>
     </nav>
 </header>
 
-
-<!-- Sezione principale della collezione -->
+<!-- Sezione principale del piano di progetto -->
 <main>
-<h1>Come ho realizzato tutto questo</h1>
+    <section id="project-plan">
+        <h1>Come ho realizzato tutto questo</h1>
+
+        <h2>1. Ideazione e Pianificazione (Web Project Plan)</h2>
+
+        <h3>1.1 Definizione dell’Idea</h3>
+        <p>
+            <strong>Obiettivo:</strong> Creare una libreria digitale per gestire la propria collezione di vinili. L’obiettivo è offrire uno strumento per catalogare, descrivere e organizzare i dischi in vinile, permettendo agli utenti di visualizzare facilmente informazioni come titolo, artista, anno, genere, etichetta e dettagli unici della propria collezione.
+        </p>
+        <p>
+            <strong>Abstract (Idea):</strong> LP Library è una piattaforma per collezionisti di vinili, ideata per catalogare, visualizzare e organizzare le collezioni in modo intuitivo e semplice, aiutando gli utenti a gestire e valorizzare i propri dischi.
+        </p>
+
+        <h3>1.1.2 Brief (Pianificazione)</h3>
+        <ul>
+            <li>
+                <strong>Finalità e Obiettivi:</strong>
+                <ul>
+                    <li>Facilitare la gestione della collezione di vinili tramite un’interfaccia digitale.</li>
+                    <li>Fornire strumenti per visualizzare e cercare dischi in base a vari criteri.</li>
+                    <li>Permettere agli utenti di accedere a informazioni dettagliate su ciascun disco.</li>
+                    <li>Permettere anche l’inserimento di un'ubicazione, nel caso in cui l’utente voglia catalogare gli scaffali o i ripiani dove conserva i vinili per trovarli rapidamente.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pubblico:</strong>
+                <ul>
+                    <li>Il pubblico principale sono appassionati di vinili che desiderano catalogare la propria collezione. Il progetto è da considerarsi amatoriale e non per i negozianti.</li>
+                    <li>Possibili sottogruppi includono diversi utenti, nel caso di una famiglia, dove membri hanno LP diversi e non desiderano inserirli nella collezione principale.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Accesso:</strong>
+                <ul>
+                    <li>L’accesso è previsto per dispositivi desktop e mobile, con un design responsive per garantire una buona esperienza utente su schermi di diverse dimensioni.</li>
+                    <li>Saranno inclusi solo contenuti testuali e immagini, per semplificare l’interfaccia.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Contenuti e Dati:</strong>
+                <ul>
+                    <li>Fonti di dati come informazioni discografiche, biografie degli artisti e descrizioni saranno curate direttamente dagli utenti, ma si possono esplorare anche API pubbliche per estrarre dati di base (ad esempio, Discogs o MusicBrainz, se permesso).</li>
+                    <li>Ogni disco includerà informazioni principali: Codice, Titolo, Artista-Gruppo, Anno di pubblicazione, Dimensioni (Pollici e RPM), Paese, Casa Discografica, Prezzo e Ubicazione.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>2. Benchmark</h2>
+
+        <h3>2.1 Selezione dei Progetti di Benchmark</h3>
+        <ul>
+            <li>
+                <strong><a href="https://www.discogs.com/it/"> Discogs</a> </strong>: È una delle più grandi piattaforme online per collezionisti di vinili, CD e altri supporti musicali. Offre una catalogazione completa, schede dettagliate di ogni vinile e una comunità attiva di utenti.
+            </li>
+            <li>
+                <strong><a href="https://musicbrainz.org/"> MusicBrainz</a></strong>: Questa è un’enciclopedia musicale aperta e gratuita. Come Discogs, MusicBrainz ha un ampio database e permette una catalogazione precisa. I metadati sono ben strutturati e integrati con informazioni sugli artisti e album.
+            </li>
+        </ul>
+
+        <h3>2.1.2 Analisi di Discogs</h3>
+        <ul>
+            <li>
+                <strong>Punti di Forza:</strong>
+                <ul>
+                    <li><em>Interfaccia e Struttura:</em> Discogs ha un’interfaccia pulita e intuitiva, con sezioni chiare per ogni tipo di informazione (es. artista, album, tracce, edizioni).</li>
+                    <li><em>Dettagli Completi per Ogni Disco:</em> Gli utenti possono trovare informazioni dettagliate su ciascun disco, comprese le edizioni, le stampe e i dettagli dell’etichetta.</li>
+                    <li><em>Community e Marketplace:</em> Discogs ha una comunità integrata dove gli utenti possono comprare e vendere vinili, rendendo il sito anche un marketplace.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Limiti:</strong>
+                <ul>
+                    <li><em>Complessità:</em> L’interfaccia è molto ricca di opzioni, il che può risultare dispersivo per chi vuole solo un sistema semplice di catalogazione.</li>
+                    <li><em>Dipendenza dalla Community:</em> Molte informazioni sono generate dagli utenti, il che significa che la qualità e la precisione possono variare.</li>
+                </ul>
+            </li>
+        </ul>
+
+
+
+        <h3>2.1.3 Analisi di MusicBrainz</h3>
+        <ul>
+            <li>
+                <strong>Punti di Forza:</strong>
+                <ul>
+                    <li><em>Organizzazione dei Metadati:</em> MusicBrainz segue uno standard molto rigoroso per i metadati, assicurando che ogni informazione sia strutturata e facile da trovare.</li>
+                    <li><em>Interfaccia Focalizzata sui Dati:</em> Il sito è meno orientato al marketplace e più al catalogo, quindi risulta utile per chi cerca un archivio musicale accurato senza componenti commerciali.</li>
+                    <li><em>Integrazione con Altre Piattaforme:</em> I dati di MusicBrainz sono usati da diverse altre piattaforme musicali, rendendolo molto affidabile come fonte.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Limiti:</strong>
+                <ul>
+                    <li><em>Interfaccia Minimalista:</em> Sebbene dettagliata, l’interfaccia di MusicBrainz è piuttosto minimalista e potrebbe sembrare meno accattivante per l’utente medio.</li>
+                    <li><em>Richiede Conoscenze Tecniche:</em> Gli utenti devono familiarizzare con standard di metadati specifici, che potrebbero risultare complicati per un uso personale.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Sezione 3 -->
+        <h2>3. Struttura</h2>
+
+        <h3>3.1 Mappa Concettuale</h3>
+        <p>La mappa concettuale serve per rappresentare le relazioni tra i concetti chiave del sito. Qui delineiamo le principali sezioni del sito e come si connettono.</p>
+
+        <h4>3.1.1 Elementi della Mappa</h4>
+        <ul>
+            <li><strong>Home:</strong> Punto di accesso principale con una panoramica della collezione e collegamenti rapidi.</li>
+            <li><strong>Collezione di Vinili:</strong> La sezione principale dove vengono elencati tutti i vinili con possibilità di filtrare e ordinare.</li>
+            <li><strong>Visualizzazione Singolo Vinile:</strong> Pagina dedicata a ogni vinile, contenente dettagli come titolo, artista, anno, etichetta, edizione e note personali.</li>
+            <li><strong>Strumenti di Navigazione:</strong> Opzioni per navigare attraverso la collezione, come filtri per anno, artista, genere e ricerca per parole chiave.</li>
+            <li><strong>Web Project Plan:</strong> Documento di progetto accessibile tramite un link di metanavigazione.</li>
+        </ul>
+
+        <p>La struttura concettuale può essere rappresentata come:</p>
+        <pre>
+Home → Collezione di Vinili → Vinile Singolo
+                      ↳ Filtri e Ricerca
+Web Project Plan (metanavigazione)
+        </pre>
+
+        <h4>3.1.2 Schema Gerarchico</h4>
+        <p>Questo schema definisce la gerarchia di navigazione e le dipendenze tra le pagine principali.</p>
+        <ul>
+            <li><strong>Home:</strong>
+                <ul>
+                    <li><strong>Collezione di Vinili:</strong>
+                        <ul>
+                            <li><strong>Pagina Singolo Vinile</strong></li>
+                            <li><strong>Filtri e Ricerca</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Web Project Plan</strong> (metanavigazione)</li>
+        </ul>
+
+        <h4>3.1.3 Categorie per i Vinili</h4>
+        <p>Ogni vinile può essere descritto attraverso categorie chiave per facilitare l’organizzazione e la ricerca:</p>
+        <ul>
+            <li><strong>Codice:</strong> Identificativo unico per ogni vinile, utile per catalogazione e ricerca.</li>
+            <li><strong>Titolo:</strong> Il titolo dell’album o del disco.</li>
+            <li><strong>Artista-Gruppo:</strong> Nome dell’artista o del gruppo musicale.</li>
+            <li><strong>Anno di Pubblicazione:</strong> Anno in cui il vinile è stato rilasciato.</li>
+            <li><strong>Genere:</strong> Genere musicale del disco (es. rock, jazz, pop).</li>
+            <li><strong>Pollici:</strong> Dimensione del vinile (es. 7”, 10”, 12”).</li>
+            <li><strong>RPM:</strong> Numero di giri al minuto (es. 33, 45).</li>
+            <li><strong>Paese:</strong> Paese di origine del vinile.</li>
+            <li><strong>Casa Discografica:</strong> Etichetta discografica che ha prodotto il disco.</li>
+            <li><strong>Prezzo:</strong> Valore stimato del vinile, utile per collezionisti.</li>
+        </ul>
+
+        <!-- Sezione 4 -->
+        <h2>4. Layout</h2>
+
+        <h3>4.1 Architettura delle Pagine</h3>
+        <p>Disegneremo le pagine principali del sito, con particolare attenzione alla visualizzazione dei dettagli dei vinili e alla navigazione. Le pagine principali includeranno:</p>
+        <ul>
+            <li><strong>Home:</strong> Presentazione del sito con link alla collezione e una breve descrizione.</li>
+            <li><strong>Collezione di Vinili:</strong> Una pagina elenco con una tabella che include i campi principali come Codice, Titolo, Artista, Anno, Genere, ecc.</li>
+            <li><strong>Dettagli Vinile Singolo:</strong> Pagina con i dettagli completi di ogni vinile selezionato, inclusi tutti i campi specificati.</li>
+            <li><strong>Web Project Plan:</strong> Una pagina con la documentazione del progetto, accessibile dal piè di pagina o dalla metanavigazione.</li>
+        </ul>
+
+        <h3>4.2 Creazione dei Wireframes</h3>
+        <p>Ecco una descrizione di ciascun wireframe:</p>
+        <ul>
+            <li>
+                <strong>Home Page Wireframe:</strong>
+                <ul>
+                    <li>Testata con titolo del sito e menu di navigazione.</li>
+                    <li>Sezione centrale con descrizione del sito e collegamenti alla collezione di vinili.</li>
+                    <li>Piè di pagina con link di metanavigazione (es. Web Project Plan).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Collezione di Vinili Wireframe:</strong>
+                <ul>
+                    <li>Testata con link di navigazione principali.</li>
+                    <li>Tabella dei Vinili con intestazioni per ciascun campo.</li>
+                    <li>Filtri e Barra di Ricerca per opzioni avanzate di navigazione.</li>
+                    <li>Piè di pagina con link utili.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pagina Dettagli Vinile Wireframe:</strong>
+                <ul>
+                    <li>Testata con navigazione.</li>
+                    <li>Sezione centrale con tutti i dettagli di un singolo vinile.</li>
+                    <li>Piè di pagina con link di metanavigazione.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Sezione 5 -->
+        <h2>5. Usabilità</h2>
+        <p>L'usabilità è fondamentale per assicurare che gli utenti possano interagire con il sito in modo efficace e soddisfacente. Gli aspetti considerati includono:</p>
+        <h3>5.1 Architettura dell'Informazione</h3>
+        <p>La struttura chiara e logica delle pagine aiuta gli utenti a trovare facilmente le informazioni desiderate.</p>
+        <h3>5.2 Aspetto e Tipografia</h3>
+        <p>Utilizzo di font leggibili e dimensioni adeguate per migliorare la leggibilità del contenuto.</p>
+        <h3>5.3 Colori, Icone e Font</h3>
+        <p>Scelta di una palette di colori armoniosa e di icone intuitive per rendere l'interfaccia più user-friendly.</p>
+
+        <!-- Sezione 6 -->
+        <h2>6. Servizi</h2>
+        <h3>6.1 Sistemi di Browsing</h3>
+        <p>Implementazione di sistemi di navigazione efficienti, come menu, breadcrumb e filtri di ricerca.</p>
+        <h3>6.2 Utilities e Tools</h3>
+        <p>Fornitura di strumenti utili agli utenti, come la possibilità di aggiungere nuovi vinili, modificare informazioni e ordinare la collezione.</p>
+        <h3>6.3 Strumenti e Servizi</h3>
+        <p>Integrazione di servizi aggiuntivi come la visualizzazione di grafici o statistiche sulla collezione.</p>
+
+        <!-- Sezione 7 -->
+        <h2>7. Bibliografia</h2>
+        <p>Le fonti utilizzate per lo sviluppo del progetto includono:</p>
+        <ul>
+            <li><strong>Testi:</strong> Documentazione ufficiale di HTML, CSS e JavaScript.</li>
+            <li><strong>Immagini:</strong> Immagini dei vinili e icone utilizzate nel sito.</li>
+            <li><strong>Strumenti:</strong> Editor di codice come Visual Studio Code, strumenti di progettazione come Figma o Adobe XD.</li>
+            <li><strong>Applicazioni e Componenti:</strong> Librerie JavaScript come jQuery (se utilizzate), framework CSS come Bootstrap (se utilizzati).</li>
+        </ul>
+    </section>
 </main>
 
 <!-- Footer -->
 <footer>
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
-    <p><a href="project-plan.html">Web Project Plan</a></p>
 </footer>
-
-<!-- Script per la gestione dei vinili -->
-<script src="app.js"></script>
 
 </body>
 </html>

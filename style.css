@@ -46,7 +46,6 @@ nav a:hover {
     color: #ff6347; /* Cambia colore al passaggio del mouse */
 }
 
-
 /* Stile della sezione principale */
 main {
     padding: 20px;
@@ -73,12 +72,12 @@ main h2 {
     font-size: 1.8em;
     color: #222;
 }
-.cover{
+
+.cover {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 /* Stile per la sezione di aggiunta vinile */
@@ -102,7 +101,8 @@ main h2 {
     gap: 10px;
 }
 
-#aggiungi-vinile input {
+#aggiungi-vinile input,
+#aggiungi-vinile select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -112,7 +112,7 @@ main h2 {
     padding: 10px 20px;
     background-color: #222;
     color: #fff;
-    border: 10px;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     grid-column: 1 / 2;
@@ -165,6 +165,31 @@ tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+/* Stili per la paginazione */
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#pagination .pagina {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+#pagination .pagina.active {
+    background-color: #333;
+    color: #fff;
+}
+
+#pagination .pagina:hover {
+    background-color: #ddd;
+}
+
 /* Footer */
 footer {
     background-color: #333;
@@ -180,6 +205,131 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Se hai una classe specifica per i link dei titoli */
+.titolo-disco-link {
+    color: #333;
+}
+
+.titolo-disco-link:hover {
+    color: #333;
+}
+
+.copertina {
+    width: 536px;
+    height: 536px;
+    object-fit: contain;
+    background-color: #f0f0f0; /* Colore di sfondo per riempire eventuali spazi vuoti */
+    margin-bottom: 20px;
+}
+
+
+
+/* Stili per il Web Project Plan */
+#project-plan {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+#project-plan h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#project-plan h2 {
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 10px;
+}
+
+#project-plan h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+#project-plan p {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+#project-plan ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+#project-plan li {
+    margin-bottom: 10px;
+}
+
+#project-plan strong {
+    color: #222;
+}
+
+#project-plan em {
+    color: #ff6347;
+}
+
+#project-plan code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    font-family: monospace;
+}
+
+#project-plan pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+#project-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#project-plan table, #project-plan th, #project-plan td {
+    border: 1px solid #ccc;
+}
+
+#project-plan th, #project-plan td {
+    padding: 10px;
+    text-align: left;
+}
+
+#project-plan th {
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    #project-plan {
+        padding: 15px;
+    }
+
+    #project-plan h1 {
+        font-size: 1.8em;
+    }
+
+    #project-plan h2 {
+        font-size: 1.6em;
+    }
+
+    #project-plan h3 {
+        font-size: 1.4em;
+    }
 }
 
 /* Responsive Design */
