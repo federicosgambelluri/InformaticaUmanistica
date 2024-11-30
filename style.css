@@ -224,8 +224,6 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-
-
 /* Stili per il Web Project Plan */
 #project-plan {
     max-width: 800px;
@@ -365,30 +363,80 @@ footer a:hover {
     opacity: 1;
 }
 
+/* Media Query per schermi piccoli */
 @media (max-width: 768px) {
-    #project-plan {
-        padding: 15px;
+    body {
+        font-size: 16px;
     }
 
-    #project-plan h1 {
-        font-size: 1.8em;
+    header h1 {
+        font-size: 1.5em;
     }
 
-    #project-plan h2 {
-        font-size: 1.6em;
-    }
-
-    #project-plan h3 {
-        font-size: 1.4em;
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
-        display: block;
-        margin: 10px 0;
+        margin: 5px 0;
+        font-size: 1em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 1.5em;
     }
 
     #aggiungi-vinile form {
         grid-template-columns: 1fr;
     }
-}
 
+    #aggiungi-vinile button {
+        grid-column: 1 / -1;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    .copertina {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Regola le dimensioni delle immagini nel carosello */
+    .carousel-item img {
+        width: 100%;
+    }
+
+    /* Nascondi le frecce del carosello su schermi piccoli se necessario */
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    footer {
+        padding: 0.5em;
+    }
+
+    #project-plan {
+        padding: 15px;
+    }
+
+    #project-plan h1 {
+        font-size: 1.5em;
+    }
+
+    #project-plan h2 {
+        font-size: 1.3em;
+    }
+
+    #project-plan h3 {
+        font-size: 1.1em;
+    }
+}
