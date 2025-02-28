@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dublin Core -->
+    <meta name="DC.title" content="LP Library - Collezione di Vinili">
+    <meta name="DC.creator" content="Federico Sgambelluri">
+    <meta name="DC.subject" content="Catalogazione vinili, musica, archivio digitale">
+    <meta name="DC.description" content="Un archivio per organizzare e gestire la propria collezione di vinili.">
+    <meta name="DC.publisher" content="LP Library">
+    <meta name="DC.date" content="2024-02-28">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="it">
+
+
     <title>LP Library - Web Project Plan</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,6 +40,17 @@
         <h3>1.1 Definizione dell’Idea</h3>
         <p>
             <strong>Obiettivo:</strong> Creare una libreria digitale per gestire la propria collezione di vinili. L’obiettivo è offrire uno strumento per catalogare, descrivere e organizzare i dischi in vinile, permettendo agli utenti di visualizzare facilmente informazioni come titolo, artista, anno, genere, etichetta e dettagli unici della propria collezione.
+
+           <br>
+            <br>
+            In un’epoca dominata dallo streaming e dalla smaterializzazione della musica, il vinile rappresenta un baluardo della cultura musicale tangibile, un ponte tra il passato e il presente che merita di essere valorizzato e preservato. Questa libreria digitale non è solo un catalogo, ma un tributo alla fisicità della musica, alla sua capacità di raccontare storie non solo attraverso il suono, ma anche attraverso la copertina, i testi stampati, i segni del tempo incisi nei solchi del disco.
+
+            <br>
+            <br>
+            Ogni vinile è un frammento di storia musicale e personale, un testimone della trasformazione della società e dei gusti musicali. Questo progetto vuole dare agli appassionati uno strumento per custodire e condividere la loro collezione, non solo come archivio, ma come un vero e proprio museo personale della musica. In questo modo, l’arte dell’ascolto consapevole e della scoperta musicale potrà essere tramandata alle future generazioni, resistendo all’effimero consumo digitale e valorizzando l’esperienza sensoriale unica che solo il vinile può offrire.
+            <br>
+            <br>
+            Inoltre, questa libreria digitale contribuirà a evitare che i vinili, spesso considerati solo ingombranti oggetti fisici nelle abitazioni moderne, vengano svenduti ai mercatini dell’usato per fare spazio. Catalogare la propria collezione in modo strutturato e valorizzarne l’importanza aiuterà i collezionisti a prendere decisioni più consapevoli, evitando che pezzi rari o di valore storico vengano dispersi e sottratti alla memoria collettiva della musica.
         </p>
 
 
@@ -176,9 +199,9 @@ Web Project Plan (metanavigazione)
         <p>Disegneremo le pagine principali del sito, con particolare attenzione alla visualizzazione dei dettagli dei vinili e alla navigazione. Le pagine principali includeranno:</p>
         <ul>
             <li><strong>Home:</strong> Presentazione del sito con link alla collezione e una breve descrizione.</li>
-            <li><strong>Collezione di Vinili:</strong> Una pagina elenco con una tabella che include i campi principali come Codice, Titolo, Artista, Anno, Genere, ecc.</li>
-            <li><strong>Dettagli Vinile Singolo:</strong> Pagina con i dettagli completi di ogni vinile selezionato, inclusi tutti i campi specificati.</li>
-            <li><strong>Web Project Plan:</strong> Una pagina con la documentazione del progetto, accessibile dal piè di pagina o dalla metanavigazione.</li>
+            <li><strong>Collezione di Vinili:</strong> Una sezione della home con una tabella che include i campi principali come Codice, Titolo, Artista, Anno, Genere, ecc.</li>
+            <li><strong>Dettagli Vinile Singolo:</strong> Pagina con la card di ogni vinile selezionato, la card comprende due pannelli, uno con inclusi tutti i campi specificati e l'altro con il commento personale sul disco.</li>
+            <li><strong>Web Project Plan:</strong> Una pagina con la documentazione del progetto (questa)</li>
         </ul>
 
         <h3>4.2 Creazione dei Wireframes</h3>
@@ -269,9 +292,42 @@ Web Project Plan (metanavigazione)
         <!-- Sezione 6 -->
         <h2>6. Servizi</h2>
         <h3>6.1 Sistemi di Browsing</h3>
-        <p>Per quanto riguarda la navigazione non è stato necessario introdurre sistemi di navigazione come menu, breadcrumb poichè la struttura è molto semplice e l'header funge perfettametne da navigatore, è stata solo utilizzata una paginazione per la tabella dei vinili per evitare che l'elenco fosse troppo lungo e in modo tale da semplificare la navigazione, non si esclude l' introduzione futura di filtri di ricerca.</p>
+        <p>Per quanto riguarda la navigazione sono stati introdotti diversi sistemi di navigazione per rispettare le specifiche richieste:</p>
+
+
+        <ul>
+
+            <li><strong>W3Schools HOW TO / Bootstrap:</strong> almeno 5 componenti:
+                <ul>
+                    <li>Menù --> Nell'header per cambiare pagina ✅</li>
+                    <li>Carousel --> Nella Home per vedere le copertine dei dischi ✅</li>
+                    <li>Accordion --> Per visualizzare il form di inserimento dei dischi ✅</li>
+                    <li>Buttons --> Per aggiungere un elemento alla collezione ✅</li>
+                    <li>Table --> Per visualizzare tutti i dischi ✅</li>
+                    <li>Card --> Per visualizzare un disco ✅</li>
+                    <li>Tabs --> Per visualizzare info o commento di un disco ✅</li>
+
+
+                </ul>
+            </li>
+            <li><strong>Servizi di browsing:</strong> almeno 3 componenti:
+
+                <ul>
+                    <li>Paginazione --> Nella tabella dei vinili per visualizzarne solo 10 alla volta ✅</li>
+                    <li>Breadcrumb --> Nella pagina di un disco ✅</li>
+                    <li>Timeline --> Per vedere gli anni di pubblicazione dei dischi della collezione ✅</li>
+
+
+
+                </ul>
+            </li>
+
+
+        </ul>
         <h3>6.2 Utilities e Tools</h3>
         <p>Fornitura di strumenti utili agli utenti, come la possibilità di aggiungere nuovi vinili, modificare informazioni e ordinare la collezione.</p>
+        <li><strong>Almeno 1 tool integrativo:</strong> ShareThis per condividere le informazionidi un disco sui social! ✅</li>
+        <li><strong>Dublin Core:</strong> Presente nel footer e nell'header della pagina ✅</li>
         <h3>6.3 Strumenti e Servizi</h3>
         <p>In futuro verranno aggiunti servizi aggiuntivi come la possibilità di ascoltare gli album dalla pagina, magari con API di Youtube, Spotify o Apple Music.</p>
 
@@ -281,11 +337,14 @@ Web Project Plan (metanavigazione)
         <ul>
             <li><strong>Testi:</strong> Le indicazioni per la realizzaizone del progetto sono state fornite su Virutale, dalla professoressa Francesca Tomasi, i vinili fanno parte della collezione dello studente Federico Sgambelluri e le informazioni su di essi sono state reperite da Discogs</li>
             <li><strong>Immagini:</strong> Le immagini degli LP sono state reprerite da: Amazon, Apple Music, IBS, Spotfy, Mondadori</li>
-            <li><strong>Strumenti:</strong> Il codice è stato redatto con l'Editor IntelliJ IDEA, i Wireframe sono stati realizzati utilizzando il sitoo wireframe.cc</li>
+            <li><strong>Strumenti:</strong> Il codice è stato redatto con l'Editor IntelliJ IDEA, i Wireframe sono stati realizzati utilizzando il sitoo wireframe.cc e la versione di prova di balsamiq.cloud</li>
             <li><strong>Applicazioni e Componenti:</strong> Sono stati utilizzati framework CSS come Bootstrap per la realizzazione del carosello con le imamgini degli LP.</li>
         </ul>
+
+
+
         <strong>Nota Bene: </strong>
-        <p>Gli LP che sono presenti al caricamento della pagina sono caricati su un file json, i seguenti dischi che si aggiungono tramite il form invece sono memorizzati nella chache del berowser, visto che la versione gratuita del servizio di hosting utilizzato (GitHub), non permette l'utilizzo di Backend tradizioanli poichè progettato per hostare pagine statiche. </p>
+        <p>I vinili presenti al caricamento della pagina sono caricati da un file JSON, mentre i dischi aggiunti tramite il form vengono memorizzati nella cache del browser. Questo avviene perché la versione gratuita del servizio di hosting utilizzato (GitHub) non supporta backend tradizionali, essendo progettata per ospitare solo pagine statiche. Anche i commenti vengono salvati nella cache del browser in assenza di un backend.</p>
     <p>Si chiede scusa per eventuali errori di battitura.</p>
     </section>
 </main>
@@ -293,6 +352,25 @@ Web Project Plan (metanavigazione)
 <!-- Footer -->
 <footer>
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
+
+    <section id="dublin-core" class="container">
+
+        <div class="row">
+            <!-- Prima colonna -->
+            <div class="col-md-6">
+                <p><strong>Titolo:</strong> LP Library - Collezione di Vinili</p>
+                <p><strong>Creatore:</strong> Federico Sgambelluri</p>
+                <p><strong>Descrizione:</strong> Archivio per catalogare vinili</p>
+                <p><strong>Editore:</strong> LP Library</p>
+            </div>
+            <!-- Seconda colonna -->
+            <div class="col-md-6">
+                <p><strong>Data di pubblicazione:</strong> 2024</p>
+                <p><strong>Formato:</strong> HTML</p>
+                <p><strong>Lingua:</strong> Italiano</p>
+            </div>
+        </div>
+    </section>
 </footer>
 
 </body>

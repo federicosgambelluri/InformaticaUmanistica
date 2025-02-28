@@ -322,6 +322,12 @@ footer a:hover {
     height: auto;
 }
 
+.carousel-item img:hover {
+    filter: brightness(1.5); /* Aumenta la luminosità del 30% */
+    transition: filter 0.3s ease-in-out;
+
+}
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
@@ -362,6 +368,134 @@ footer a:hover {
     background-color: #555;
     opacity: 1;
 }
+
+
+#card{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: #cccccc;
+    border-radius: 10px;
+
+}
+
+#card:hover{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: white;
+
+}
+
+.card-header{
+
+    background-color: #333;
+
+
+}
+
+.card-header a {
+    text-align: left;
+    color:white;
+    text-decoration: none;
+}
+
+.card-header a:hover {
+    text-align: left;
+    color:white;
+
+}
+
+ul.breadcrumb {
+    padding: 8px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+ul.breadcrumb li {display: inline;}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+
+    padding: 20px 0;
+}
+
+/* Barra della timeline */
+.timeline {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #333;
+    height: 5px;
+    width: 90%;
+    max-width: 1000px;
+    gap:20px;
+
+}
+
+/* Elementi della timeline */
+.timeline-item {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    line-height: 80px;
+    gap:19px;
+
+}
+
+.timeline-item:hover {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    line-height: 80px;
+    gap:19px;
+
+}
+
+/* Linea di connessione tra gli elementi */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #333;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+footer {
+
+    line-height: 0.9;
+}
+
+
 
 /* Media Query per schermi piccoli */
 @media (max-width: 768px) {
@@ -438,5 +572,13 @@ footer a:hover {
 
     #project-plan h3 {
         font-size: 1.1em;
+    }
+
+    .timeline-container {
+        overflow-x: auto;
+    }
+
+    .timeline {
+        flex-wrap: nowrap;
     }
 }

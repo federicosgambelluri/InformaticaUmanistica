@@ -195,7 +195,7 @@ if (window.location.pathname.endsWith('disco.html')) {
     }
 }
 
-// Funzione per caricare il carosello delle copertine
+
 // Funzione per caricare il carosello delle copertine
 function caricaCarosello() {
     const carouselInner = document.querySelector('#albumCarousel .carousel-inner');
@@ -245,6 +245,23 @@ function caricaCarosello() {
         carouselInner.appendChild(carouselItem);
     }
 }
+
+
+
+function salvaCommento() {
+
+    const commento = document.getElementById("campo-commento").value.trim();
+    if (commento) {
+       // localStorage.setItem("commentoDisco", commento);
+        document.getElementById("commento-salvato").innerText = commento;
+        document.getElementById("campo-commento").style.display = "none";
+        document.getElementById("btn-commento").style.display = "none";
+
+    } else {
+        document.getElementById("commento-salvato").innerText = "Inserisci un commento prima di salvare.";
+    }
+}
+
 
 // Carica i dati al caricamento della pagina
 window.onload = caricaDaJSON;
