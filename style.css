@@ -507,10 +507,56 @@ iframe{
     cursor: pointer;
 }
 
+/* Stile per rendere l'immagine cliccabile al passaggio del mouse */
+.zoom-img-2 {
+    cursor: pointer;
+}
+
+/* Modal (overlay a schermo intero) */
+.modal {
+    display: none; /* Nascosto di default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+}
+
+/* Immagine all'interno del modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Pulsante per chiudere il modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
 
 
-/* Media Query per schermi piccoli */
+
+/* Media Query per dispositivi mobili */
 @media (max-width: 768px) {
+    /* Regolazioni generali */
     body {
         font-size: 16px;
     }
@@ -538,6 +584,7 @@ iframe{
         font-size: 1.5em;
     }
 
+    /* Sezione aggiungi vinile */
     #aggiungi-vinile form {
         grid-template-columns: 1fr;
     }
@@ -546,6 +593,7 @@ iframe{
         grid-column: 1 / -1;
     }
 
+    /* Tabelle e immagini */
     table, th, td {
         font-size: 0.9em;
     }
@@ -555,21 +603,22 @@ iframe{
         height: auto;
     }
 
-    /* Regola le dimensioni delle immagini nel carosello */
+    /* Carosello */
     .carousel-item img {
         width: 100%;
     }
 
-    /* Nascondi le frecce del carosello su schermi piccoli se necessario */
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
     }
 
+    /* Footer */
     footer {
         padding: 0.5em;
     }
 
+    /* Project Plan */
     #project-plan {
         padding: 15px;
     }
@@ -586,6 +635,7 @@ iframe{
         font-size: 1.1em;
     }
 
+    /* Timeline */
     .timeline-container {
         overflow-x: auto;
     }

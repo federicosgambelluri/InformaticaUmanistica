@@ -388,6 +388,41 @@
         </div>
     </section>
 </footer>
+<!-- Modal per l'immagine fullscreen -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
 
+
+<script>
+    // Seleziona il modal e l'immagine all'interno del modal
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+
+    // Seleziona l'immagine cliccabile
+    var img = document.querySelector(".zoom-img-2");
+
+    // Al click sull'immagine, mostra il modal e imposta la sorgente dell'immagine
+    img.addEventListener("click", function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    });
+
+    // Seleziona l'elemento per la chiusura (la "X")
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Al click sulla "X", chiudi il modal
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Facoltativo: chiusura del modal se si clicca fuori dall'immagine
+    modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
