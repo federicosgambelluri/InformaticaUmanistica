@@ -56,6 +56,61 @@ function visualizzaVinili() {
     mostraPaginazione();
 }
 
+// Funzione per visualizzare i vinili nella tabella
+function visualizzaViniliConCopertina() {
+    const vinili = viniliTotali;
+    const tableBody = document.querySelector("table tbody");
+    tableBody.innerHTML = ""; // Pulisce la tabella prima di aggiungere i nuovi dati
+
+    // Calcola gli indici per la paginazione
+    const startIndex = (paginaCorrente - 1) * elementiPerPagina;
+    const endIndex = startIndex + elementiPerPagina;
+    const viniliDaMostrare = vinili.slice(startIndex, endIndex);
+
+    viniliDaMostrare.forEach(vinile => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><img src="${vinile.Path || 'images/default-cover.jpg'}" alt="${vinile.Titolo}" class="small-cover"></td>
+            <td>${vinile.Codice || ""}</td>
+            <td><a href="disco.html?title=${encodeURIComponent(vinile.Titolo)}" class="titolo-disco-link">${vinile.Titolo || ""}</a></td>
+            <td>${vinile["Artista-Gruppo"] || ""}</td>
+            <td>${vinile["Anno di Pubblicazione"] || ""}</td>
+            <td>${vinile.Genere || ""}</td>
+            <td>${vinile.Pollici || ""}</td>
+            <td>${vinile.RPM || ""}</td>
+            <td>${vinile.Paese || ""}</td>
+            <td>${vinile["Casa Discografica"] || ""}</td>
+            <td>${vinile.Prezzo || ""}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    // Aggiorna i controlli di paginazione
+    mostraPaginazioneConCopertina();
+}
+
+// Funzione per mostrare i controlli di paginazione con copertura
+function mostraPaginazioneConCopertina() {
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = ""; // Pulisce i pulsanti di paginazione
+
+    const totalPages = Math.ceil(viniliTotali.length / elementiPerPagina);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i;
+        btn.classList.add('pagina');
+        if (i === paginaCorrente) {
+            btn.classList.add('active');
+        }
+        btn.addEventListener('click', function () {
+            paginaCorrente = i;
+            visualizzaViniliConCopertina(); // Visualizza i vinili con la copertura
+        });
+        paginationContainer.appendChild(btn);
+    }
+}
+
 // Funzione per mostrare i controlli di paginazione
 function mostraPaginazione() {
     const paginationContainer = document.getElementById('pagination');
@@ -264,4 +319,15 @@ function salvaCommento() {
 
 
 // Carica i dati al caricamento della pagina
-window.onload = caricaDaJSON;
+//window.onload = caricaDaJSON;
+
+// Carica i dati al caricamento della pagina
+window.onload = function() {
+    caricaDaJSON().then(() => {
+        if (window.location.pathname.includes("collezione.html")) {
+            visualizzaViniliConCopertina(); // Popola collezione.html
+        } else {
+            visualizzaVinili(); // Popola index.html
+        }
+    });
+};

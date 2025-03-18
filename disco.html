@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap CDN -->
+    <!-- Bootstrap per suddividere in Tab -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <!-- Jquery e Bootstrap per spostarsi tra le Tab -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
@@ -33,6 +35,7 @@
     <h1>LP Library - Dettagli del Disco</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="collezione.html">Collezione</a>
         <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
         <a href="project-plan.html">Web Project Plan</a>
     </nav>
@@ -40,7 +43,7 @@
 
 <ul class="breadcrumb">
     <li><a href="index.html">Home</a></li>
-    <li><a href="#">Tutti i dischi</a></li>
+    <li><a href="collezione.html">Tutti i dischi</a></li>
     <li>Disco</li>
 </ul>
 <!-- Contenuto principale -->
@@ -87,24 +90,23 @@
 <br>
 <br>
 <!-- Footer -->
-<footer>
+<footer vocab="http://purl.org/dc/terms/" typeof="dct:Dataset">
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
 
     <section id="dublin-core" class="container">
-
         <div class="row">
             <!-- Prima colonna -->
             <div class="col-md-6">
-                <p><strong>Titolo:</strong> LP Library - Collezione di Vinili</p>
-                <p><strong>Creatore:</strong> Federico Sgambelluri</p>
-                <p><strong>Descrizione:</strong> Archivio per catalogare vinili</p>
-                <p><strong>Editore:</strong> LP Library</p>
+                <p><strong>Titolo:</strong> <span property="dct:title">LP Library - Collezione di Vinili</span></p>
+                <p><strong>Creatore:</strong> <span property="dct:creator">Federico Sgambelluri</span></p>
+                <p><strong>Descrizione:</strong> <span property="dct:description">Archivio per catalogare vinili</span></p>
+                <p><strong>Editore:</strong> <span property="dct:publisher">LP Library</span></p>
             </div>
             <!-- Seconda colonna -->
             <div class="col-md-6">
-                <p><strong>Data di pubblicazione:</strong> 2024</p>
-                <p><strong>Formato:</strong> HTML</p>
-                <p><strong>Lingua:</strong> Italiano</p>
+                <p><strong>Data di pubblicazione:</strong> <span property="dct:date">2024</span></p>
+                <p><strong>Formato:</strong> <span property="dct:format">HTML</span></p>
+                <p><strong>Lingua:</strong> <span property="dct:language">Italiano</span></p>
             </div>
         </div>
     </section>

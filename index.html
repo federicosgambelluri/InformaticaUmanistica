@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicona -->
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
     <!-- Dublin Core -->
+    <!-- Il Dublin Core è uno standard di metadati utilizzato per la descrizione di risorse digitali e fisiche,
+    con l’obiettivo di facilitare la catalogazione e il recupero delle informazioni -->
     <meta name="DC.title" content="LP Library - Collezione di Vinili">
     <meta name="DC.creator" content="Federico Sgambelluri">
     <meta name="DC.subject" content="Catalogazione vinili, musica, archivio digitale">
@@ -16,15 +19,15 @@
 
 
     <title>VinylLibrary - Collezione di Vinili</title>
+    <!-- Boostrap per formare carosello -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 
-    <!-- jQuery e Bootstrap JS -->
+    <!-- jQuery per Accordion -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!--  Bootstrap JS per far scorrere il carosello-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
 
 </head>
 <body>
@@ -35,6 +38,7 @@
     <h1>LP Library - Collezione di Vinili</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="collezione.html">Collezione</a>
         <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
         <a href="project-plan.html">Web Project Plan</a>
     </nav>
@@ -46,9 +50,10 @@
     <!-- Carosello delle copertine -->
     <div id="albumCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-            <!-- Le slide saranno aggiunte dinamicamente con JavaScript -->
+            <!-- Le slide vengono aggiunte dinamicamente con JavaScript -->
         </div>
         <!-- Controlli del carosello -->
+        <!-- #albumCarousel fa parte del JS per scorrere alle copertine successive -->
         <a class="carousel-control-prev" href="#albumCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Precedente</span>
@@ -61,7 +66,6 @@
 
     <!-- Accordion per dettagli vinile -->
     <div id="vinileAccordion">
-
         <!-- Accordion per Aggiungere un Vinile -->
         <div class="card">
             <div class="card-header">
@@ -166,7 +170,7 @@
         </tr>
         </thead>
         <tbody>
-        <!-- Le righe dei vinili saranno aggiunte qui dinamicamente -->
+        <!-- Le righe dei vinili vengono aggiunte qui dinamicamente tramite Javascript -->
         </tbody>
     </table>
 
@@ -175,6 +179,7 @@
 
     <br>
     <h2>Timeline di Pubblicazione</h2>
+    <!-- La timeline al momento è un placeholder fatta manuale, in futuro leggerà dal file le date degli LP e si aggiornerà dinamicamente -->
     <div class="timeline-container">
         <div class="timeline">
             <div class="timeline-item"><span>2001</span></div>
@@ -208,30 +213,29 @@
 
 
 
+
 <!-- Footer -->
-<footer>
+<footer vocab="http://purl.org/dc/terms/" typeof="dct:Dataset">
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
 
     <section id="dublin-core" class="container">
-
         <div class="row">
             <!-- Prima colonna -->
             <div class="col-md-6">
-                <p><strong>Titolo:</strong> LP Library - Collezione di Vinili</p>
-                <p><strong>Creatore:</strong> Federico Sgambelluri</p>
-                <p><strong>Descrizione:</strong> Archivio per catalogare vinili</p>
-                <p><strong>Editore:</strong> LP Library</p>
+                <p><strong>Titolo:</strong> <span property="dct:title">LP Library - Collezione di Vinili</span></p>
+                <p><strong>Creatore:</strong> <span property="dct:creator">Federico Sgambelluri</span></p>
+                <p><strong>Descrizione:</strong> <span property="dct:description">Archivio per catalogare vinili</span></p>
+                <p><strong>Editore:</strong> <span property="dct:publisher">LP Library</span></p>
             </div>
             <!-- Seconda colonna -->
             <div class="col-md-6">
-                <p><strong>Data di pubblicazione:</strong> 2024</p>
-                <p><strong>Formato:</strong> HTML</p>
-                <p><strong>Lingua:</strong> Italiano</p>
+                <p><strong>Data di pubblicazione:</strong> <span property="dct:date">2024</span></p>
+                <p><strong>Formato:</strong> <span property="dct:format">HTML</span></p>
+                <p><strong>Lingua:</strong> <span property="dct:language">Italiano</span></p>
             </div>
         </div>
     </section>
 </footer>
-
 
 
 

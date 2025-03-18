@@ -27,6 +27,7 @@
     <h1>LP Library - Web Project Plan</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="collezione.html">Collezione</a>
         <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
         <a href="project-plan.html">Web Project Plan</a>
     </nav>
@@ -240,7 +241,20 @@
                     <li>Piè di pagina con copiright.</li>
                 </ul>
             </li>
-            <img src="images/wireframe.png" alt="Wireframe" style="width: 100%">
+            <img src="images/home.png" alt="Wireframe" style="width: 100%">
+            <br>
+            <br>
+            <li>
+
+                <strong>Collezione Wireframe:</strong>
+                <ul>
+                    <li>Testata con link di navigazione principali.</li>
+                    <li>Filtri e ricerca in primo piano</li>
+                    <li>Tabella con immagini degli elementi della collezione</li>
+                    <li>Piè di pagina con copiright.</li>
+                </ul>
+            </li>
+            <img src="images/collection.png" alt="Wireframe" style="width: 100%">
             <br>
             <br>
             <li>
@@ -254,6 +268,20 @@
                 </ul>
             </li>
             <img src="images/wireframe2.png" alt="Wireframe" style="width: 100%">
+            <br>
+            <br>
+            <li>
+
+                <strong>Autore Wireframe:</strong>
+                <ul>
+                    <li>Pagina Esterna</li>
+                    <li>Testata con immagine e nome dell'autore</li>
+                    <li>Descrzione al centro</li>
+                    <li>Competenze ed esperienze</li>
+                    <li>Form di contatto</li>
+                </ul>
+            </li>
+            <img src="images/author.png" alt="Wireframe" style="width: 100%">
             <br>
             <br>
         </ul>
@@ -357,7 +385,7 @@
         <ul>
             <li><strong>Testi:</strong> Le indicazioni per la realizzaizone del progetto sono state fornite su Virutale, dalla professoressa Francesca Tomasi, i vinili fanno parte della collezione dello studente Federico Sgambelluri e le informazioni su di essi sono state reperite da Discogs</li>
             <li><strong>Immagini:</strong> Le immagini degli LP sono state reprerite da: Amazon, Apple Music, IBS, Spotfy, Mondadori</li>
-            <li><strong>Strumenti:</strong> Il codice è stato redatto con l'Editor IntelliJ IDEA, i Wireframe sono stati realizzati utilizzando il sitoo wireframe.cc e la versione di prova di balsamiq.cloud</li>
+            <li><strong>Strumenti:</strong> Il codice è stato redatto con l'Editor IntelliJ IDEA, i Wireframe sono stati realizzati utilizzando il sito balsamiq.cloud e la versione di prova di balsamiq.cloud</li>
             <li><strong>Applicazioni e Componenti:</strong> Sono stati utilizzati framework CSS come Bootstrap per la realizzazione del carosello con le imamgini degli LP.</li>
         </ul>
 
@@ -370,24 +398,23 @@
 </main>
 
 <!-- Footer -->
-<footer>
+<footer vocab="http://purl.org/dc/terms/" typeof="dct:Dataset">
     <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
 
     <section id="dublin-core" class="container">
-
         <div class="row">
             <!-- Prima colonna -->
             <div class="col-md-6">
-                <p><strong>Titolo:</strong> LP Library - Collezione di Vinili</p>
-                <p><strong>Creatore:</strong> Federico Sgambelluri</p>
-                <p><strong>Descrizione:</strong> Archivio per catalogare vinili</p>
-                <p><strong>Editore:</strong> LP Library</p>
+                <p><strong>Titolo:</strong> <span property="dct:title">LP Library - Collezione di Vinili</span></p>
+                <p><strong>Creatore:</strong> <span property="dct:creator">Federico Sgambelluri</span></p>
+                <p><strong>Descrizione:</strong> <span property="dct:description">Archivio per catalogare vinili</span></p>
+                <p><strong>Editore:</strong> <span property="dct:publisher">LP Library</span></p>
             </div>
             <!-- Seconda colonna -->
             <div class="col-md-6">
-                <p><strong>Data di pubblicazione:</strong> 2024</p>
-                <p><strong>Formato:</strong> HTML</p>
-                <p><strong>Lingua:</strong> Italiano</p>
+                <p><strong>Data di pubblicazione:</strong> <span property="dct:date">2024</span></p>
+                <p><strong>Formato:</strong> <span property="dct:format">HTML</span></p>
+                <p><strong>Lingua:</strong> <span property="dct:language">Italiano</span></p>
             </div>
         </div>
     </section>

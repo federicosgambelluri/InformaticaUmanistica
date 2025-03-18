@@ -552,6 +552,11 @@ iframe{
     text-decoration: none;
 }
 
+.small-cover {
+    width: 150px; /* Imposta la larghezza a 50px */
+    height: auto; /* Mantiene le proporzioni originali dell'immagine */
+    object-fit: cover; /* Fa in modo che l'immagine copra il contenitore senza distorcere */
+}
 
 
 /* Media Query per dispositivi mobili */

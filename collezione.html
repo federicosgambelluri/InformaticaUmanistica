@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicona -->
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <!-- Dublin Core -->
+    <!-- Il Dublin Core è uno standard di metadati utilizzato per la descrizione di risorse digitali e fisiche,
+    con l’obiettivo di facilitare la catalogazione e il recupero delle informazioni -->
+    <meta name="DC.title" content="LP Library - Collezione di Vinili">
+    <meta name="DC.creator" content="Federico Sgambelluri">
+    <meta name="DC.subject" content="Catalogazione vinili, musica, archivio digitale">
+    <meta name="DC.description" content="Un archivio per organizzare e gestire la propria collezione di vinili.">
+    <meta name="DC.publisher" content="LP Library">
+    <meta name="DC.date" content="2024-02-28">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="it">
+
+
+    <title>VinylLibrary - Collezione di Vinili</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+
+
+</head>
+<body>
+
+<!-- Header con titolo e navigazione -->
+<header>
+    <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+    <h1>LP Library - Collezione di Vinili</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="collezione.html">Collezione</a>
+        <a href="https://federicosgambelluri.github.io/CVV/">Autore</a>
+        <a href="project-plan.html">Web Project Plan</a>
+    </nav>
+</header>
+
+<!-- Sezione principale della collezione -->
+<main>
+
+
+
+    <div id="search-filter-container">
+        <!-- Campo di ricerca (placeholder) -->
+        <input type="text" id="search-placeholder" placeholder="🔍 Cerca un vinile..." >
+
+        <!-- Filtro di ordinamento (placeholder) -->
+        <select id="sort-placeholder" >
+            <option value="">Ordina...</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+        </select>
+    </div>
+
+    <!-- Tabella dei vinili -->
+    <table>
+        <thead>
+        <tr>
+            <th>Copertina</th>
+            <th>Codice</th>
+            <th>Titolo</th>
+            <th>Artista-Gruppo</th>
+            <th>Anno di Pubblicazione</th>
+            <th>Genere</th>
+            <th>Pollici</th>
+            <th>RPM</th>
+            <th>Paese</th>
+            <th>Casa Discografica</th>
+            <th>Prezzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Le righe dei vinili vengono aggiunte qui dinamicamente tramite Javascript -->
+        </tbody>
+    </table>
+
+    <!-- Contenitore per la paginazione -->
+    <div id="pagination"></div>
+
+    <br>
+
+</main>
+
+
+
+
+<!-- Footer -->
+<footer vocab="http://purl.org/dc/terms/" typeof="dct:Dataset">
+    <p>&copy; 2024 LP Library - Tutti i diritti riservati.</p>
+
+    <section id="dublin-core" class="container">
+        <div class="row">
+            <!-- Prima colonna -->
+            <div class="col-md-6">
+                <p><strong>Titolo:</strong> <span property="dct:title">LP Library - Collezione di Vinili</span></p>
+                <p><strong>Creatore:</strong> <span property="dct:creator">Federico Sgambelluri</span></p>
+                <p><strong>Descrizione:</strong> <span property="dct:description">Archivio per catalogare vinili</span></p>
+                <p><strong>Editore:</strong> <span property="dct:publisher">LP Library</span></p>
+            </div>
+            <!-- Seconda colonna -->
+            <div class="col-md-6">
+                <p><strong>Data di pubblicazione:</strong> <span property="dct:date">2024</span></p>
+                <p><strong>Formato:</strong> <span property="dct:format">HTML</span></p>
+                <p><strong>Lingua:</strong> <span property="dct:language">Italiano</span></p>
+            </div>
+        </div>
+    </section>
+</footer>
+
+
+
+</body>
+
+
+</html>
