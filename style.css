@@ -500,6 +500,13 @@ iframe{
     margin-left: 25%;
 }
 
+.styled-table .zoom-img-2 {
+    width: 200px; /* Larghezza fissa */
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
 
 
 /* Media Query per schermi piccoli */
